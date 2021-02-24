@@ -1,0 +1,102 @@
+<div class="container"></div><div class="container">
+<section>
+    <div class="action-row">
+       
+        <button mat-raised-button class="direct-btn"><span class="material-icons">
+            mail
+            </span>DIRECT</button>
+            <div >
+        <button mat-raised-button [matMenuTriggerFor]="menu" class="more-btn">More <span class="material-icons">
+            keyboard_arrow_down
+            </span></button>
+            <mat-menu #menu="matMenu">
+                <mat-list>
+                    <mat-list-item>Export</mat-list-item>
+                    <mat-list-item>Mark as exported</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Setup Vendor</mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>Flag Invoice<span class="material-icons">
+                        flag
+                        </span></mat-list-item>
+                    <mat-list-item>Archieve Invoice</mat-list-item>
+                    <mat-list-item>Delete Invoice<span class="material-icons">
+                        delete
+                        </span></mat-list-item>
+                  </mat-list>
+            </mat-menu>
+        <button mat-raised-button color="primary" class="approve-btn">Approve</button>
+    </div>
+    </div>
+
+</section>
+<section>
+    <!-- <button mat-button (click)="accordion.openAll()">Expand All</button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button> -->
+    <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false" >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+                <span *ngIf="panelOpenState">VENDOR</span>
+             <p>Fregus cheese </p>
+             <label *ngIf="panelOpenState"><span class="material-icons">
+                check_circle_outline
+                </span>This Vendor is Mapped</label>
+             
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-grid-list cols="4" rowHeight="2:1">
+            <mat-grid-tile>
+                <label>Invoice No</label>
+            <p>345345</p></mat-grid-tile>
+            <mat-grid-tile><label>Invoice Type</label>
+                <p>Receipt</p></mat-grid-tile>
+            <mat-grid-tile><label>Restaurant</label>
+                <p>Monty's Cheese shop</p></mat-grid-tile>
+            <mat-grid-tile><p>
+                <label>SubTotal </label><span>$13000.00</span>
+            </p>
+            <p>
+                <label>Tax </label><span>$26.320</span>
+            </p>
+              </mat-grid-tile>
+
+              <mat-grid-tile>
+                <label>Posting Date</label>
+            <p>Jul 14,2017</p></mat-grid-tile>
+            <mat-grid-tile><label>Invoice Date</label>
+                <p>Jul 07,2017</p></mat-grid-tile>
+            <mat-grid-tile><label>Due Date</label>
+                <p>Sep 09,2017</p></mat-grid-tile>
+            <mat-grid-tile><p>
+                <label>Total </label><span>$100000.00</span>
+            </p>
+            
+              </mat-grid-tile>
+
+          </mat-grid-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div class="invoice-content" *ngIf="!panelOpenState"><label>2332</label>
+        <label>JUL O3, 2017</label>
+        <label>MONTYS CHEESE SHOP</label>
+        <label>LOREM IPSUM LOREM IPSUM LOREM IPSUM LOREM IPSUM </label>
+        <label><sub>Total</sub> <span>$10,000.00</span></label></div>
+</section>
+<section>
+    <mat-tab-group mat-align-tabs="start">
+        <!-- #enddocregion align-start -->
+          <mat-tab label="Line Items">
+              <line-items></line-items>
+          </mat-tab>
+          <mat-tab label="History">
+              <article class="history-content">
+             <h4>Recent Activity</h4> 
+             <mat-card>Simple card</mat-card>
+            </article>
+          </mat-tab>
+          
+        </mat-tab-group>
+</section>
+</div>
